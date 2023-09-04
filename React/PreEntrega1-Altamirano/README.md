@@ -1,8 +1,7 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# in/course
+Se trata de una plataforma de ventas de cursos online dictados por dintintos profesionales.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Pre-entrega 1
+- Se entrega una navbar funcional y un listados de unos de productos. La navbar te da acceso a distintas paginas y para acceder la home se debe clikear el logo.
+- La lista de productos mostrados es limitada a cursos de programacion
