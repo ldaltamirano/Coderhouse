@@ -1,0 +1,17 @@
+.cart {
+    color: var(--navbarBackground--);
+    margin: 1rem;
+    font-size: 1.2em;
+}
+
+@media (min-width: 770px) {
+    .cart {
+        margin-right: 2rem;
+        margin-bottom: 0.5em;
+        font-size: 1.6em;
+    }
+
+    .cart:hover {
+        color: var(--hover-color--);
+    }
+}

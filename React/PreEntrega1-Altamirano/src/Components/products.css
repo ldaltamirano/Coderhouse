@@ -1,0 +1,76 @@
+.productsLi {
+    max-width: 350px;
+    margin: 20px auto;
+}
+
+.productsLi img {
+    min-width: 350px;
+    margin-bottom: 15px;
+}
+
+.productsLi h3 {
+    text-align: left;
+    margin-bottom: 10px;
+    font-size: 1.4em;
+}
+
+.productsLi .info {
+    font-size: 1.2em;
+    color: #6a6f73;
+    text-align: left;
+}
+
+.productsLi .info:first-child {
+    padding-right: 1em;
+}
+
+.productsLi .cartAdd {
+    padding: 0;
+}
+
+.productsLi .cartAdd .price {
+    font-size: 1.6em;
+    font-weight: 700;
+    margin-top: 10px;
+    padding: 0;
+}
+
+.productsLi .cartAdd .btn-primary {
+    background: var(--navbarBackground--);
+    border-color: var(--navbarBackground--);
+    margin-top: 10px;
+}
+
+.productsLi .cartAdd .btn-primary:active {
+    background: var(--hover-color--);
+    border-color: var(--hover-color--);
+    margin-top: 10px;
+}
+
+.productsLi .cartAdd .btn-primary .cart {
+    color: white;
+    margin: 0;
+    font-size: 1em;
+}
+
+.productsLi .cartAdd .btn-primary .cart:active {
+    background: var(--navbarBackground--);
+    border-color: var(--navbarBackground--);
+}
+
+.productsLi .cartAdd .btn-primary .cart:hover {
+    background: var(--navbarBackground--);
+    border-color: var(--navbarBackground--);
+}
+
+@media (min-width: 770px) {
+    .productsLi .cartAdd .btn-primary .cart {
+        margin-right: 2rem;
+        margin-bottom: 0.5em;
+        font-size: 1.6em;
+    }
+
+    .productsLi .cartAdd .btn-primary .cart:hover {
+        color: white;
+    }
+}
