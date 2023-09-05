@@ -1,11 +1,10 @@
 import "./ItemListContainer.css";
-import Products from "../Products";
 
-export const ItemListContainer = () => {
+export const ItemListContainer = ({ greeting }) => {
     return (
         <>
             <ul className="d-flex flex-wrap flex-row p-0">
-                <Products />
+                {greeting}
             </ul>
         </>
     )

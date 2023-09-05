@@ -1,4 +1,5 @@
 import ItemListContainer from "../Components/ItemListContainer/ItemListContainer";
+import Product from "../Components/Products"
 import Slider from "../Components/Slider/Slider";
 import Att from "../assets/brands/att.svg"
 import Cisco from "../assets/brands/cisco.svg"
@@ -34,7 +35,7 @@ export default function Home() {
             </section>
             <section className="products container">
                 <h2>Los estudiantes estan viendo</h2>
-                <ItemListContainer />
+                <ItemListContainer greeting={<Product />} />
             </section>
         </main>
     )
