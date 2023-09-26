@@ -15,14 +15,12 @@ export default function CategoryStore() {
                 <span className="sr-only">Loading...</span>
             </div>
         )
-    else {
-        category = categoryId == undefined ? -1 : categoryId;
-        if (category > 0)
-            catTitle = "Estos son nuestros cursos de " + data.find(c => c.id == category).category;
-        else
-            catTitle = "Estos son todos nuestros cursos";
-        console.log(catTitle)
-    }
+    category = categoryId == undefined ? -1 : categoryId;
+    if (category > 0)
+        catTitle = "Estos son nuestros cursos de " + data.find(c => c.id == category).category;
+    else
+        catTitle = "Estos son todos nuestros cursos";
+    console.log(catTitle)
 
     return (
         <>
