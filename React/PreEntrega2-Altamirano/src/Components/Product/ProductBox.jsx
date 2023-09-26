@@ -12,7 +12,7 @@ const ProductBox = ({ product, children }) => {
                 src={thumbnail}
                 className="img-thumbnail"
             />
-            {/* <h3><strong>{title.length > 50 ? title.slice(0, 50).trim() + "..." : title}</strong></h3> */}
+            <h3><strong>{title.length > 50 ? title.slice(0, 50).trim() + "..." : title}</strong></h3>
             <span className='info'>Creado por: {createdBy}</span>
             <span className='info'>{students} estudiantes</span>
             <div className='d-flex justify-content-between align-items-center flex-row container cartAdd my-4'>
