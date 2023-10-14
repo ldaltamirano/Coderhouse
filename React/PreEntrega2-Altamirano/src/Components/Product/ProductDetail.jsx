@@ -12,7 +12,8 @@ const ProductDetail = () => {
         return (
             <>
                 <img src={Banner} alt="banner producto" className="img-fluid" />
-                <div>Loading</div>
+                <div className="spinner-border my-5" role="status">
+                </div>
             </>
         )
     p = data.products.find(prod => prod.id == productId)

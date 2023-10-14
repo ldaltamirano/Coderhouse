@@ -8,7 +8,6 @@ export const ProductListContainer = ({ categoryId }) => {
     if (loading)
         return (
             <div className="spinner-border my-5 text-center" role="status">
-                <span className="sr-only">Loading...</span>
             </div>
         )
 

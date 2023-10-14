@@ -12,7 +12,6 @@ export default function CategoryStore() {
     if (loading)
         return (
             <div className="spinner-border my-5" role="status">
-                <span className="sr-only">Loading...</span>
             </div>
         )
     category = categoryId == undefined ? -1 : categoryId;
