@@ -16,7 +16,7 @@ export default function Home() {
 
     return (
         <>
-            <div className="bannerSlider container">
+            <div className="bannerSlider">
                 <Slider />
             </div>
             <section className="clients">

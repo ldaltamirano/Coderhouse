@@ -1,16 +1,20 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useParams } from "react-router-dom";
-import { collection, getDocs, getFirestore, query, where } from "firebase/firestore"
 import { useCartContext } from "../../Context/CartContext"
 import Generic from "../../Pages/Generic";
 import Banner from "../../assets/banners/bannerProduct.jpg"
 import ItemCount from "../common/ItemCount";
 
+import Ericsson from "../../assets/brands/ericsson.svg"
+import Hp from "../../assets/brands/hewlett_packard_enterprise.svg"
+import Samsung from "../../assets/brands/samsung.svg"
+import Volkswagen from "../../assets/brands/volkswagen.svg"
+
 import "./ProductDetail.css"
+import useProducts from "../../Hooks/useProduct";
 
 const ProductDetail = () => {
-    const [product, setProduct] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const { products, loading } = useProducts(-1);
     const { productId } = useParams();
     const { addToCart } = useCartContext()
     const [quantityInCart, setQuantityInCart] = useState(0);
@@ -27,17 +31,6 @@ const ProductDetail = () => {
         }
     };
 
-    useEffect(() => {
-        const db = getFirestore();
-        const q = query(collection(db, "products"), where("id", "==", parseInt(productId)));
-        getDocs(q)
-            .then((snapShot) => {
-                setProduct(snapShot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))[0]);
-                setLoading(false)
-            })
-            .catch(error => console.log(error.message))
-    }, []);
-
     if (loading)
         return (
             <>
@@ -45,14 +38,13 @@ const ProductDetail = () => {
                 </div>
             </>
         )
-
-
+    const product = products.find(p => p.id == parseInt(productId));
 
     return (
         product != undefined ? (
             <>
                 <img src={Banner} alt="banner producto" className="img-fluid" />
-                <div className="d-flex flex-column justify-content-between align-items-start flex-md-row container">
+                <div className="d-flex flex-column justify-content-between align-items-start flex-md-row container my-5">
                     <aside className="d-flex flex-column justify-content-between col-12 col-md-5 col-lg-4 sticky-lg-top container">
                         <div className="d-flex flex-column justify-content-start align-items-start">
                             <img src={product.thumbnail} alt="banner producto" className="w-100 img-img-fluid my-2 mt-4" />
@@ -82,6 +74,18 @@ const ProductDetail = () => {
                             <p className="fs-5 my-2">
                                 {product.description}
                             </p>
+                        </article>
+
+                        <article className="courseClients">
+                            <div className="d-flex flex-column align-items-start">
+                                <p className="fs-3">Estos clientes usan estas tecnologias</p>
+                                <div className="brands d-flex align-items-start justify-content- flex-wrap">
+                                    <img src={Ericsson} alt="Ericsson" />
+                                    <img src={Hp} alt="Hp" />
+                                    <img src={Samsung} alt="Samsung" />
+                                    <img src={Volkswagen} alt="Volkswagen" />
+                                </div>
+                            </div>
                         </article>
                     </section>
                 </div >

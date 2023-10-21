@@ -32,7 +32,6 @@ export const Navbar = () => {
                         </div>
                         <div className="offcanvas-body">
                             <ul className="navbar-nav justify-content-start flex-grow-2 pe-3 pe-lg-0">
-                                <li className="nav-item"><Link to="/products" className="nav-link">Tienda</Link></li>
                                 <li className="nav-item dropdown">
                                     <Link className="nav-link dropdown-toggle" to="/category" data-bs-toggle="dropdown" aria-expanded="false">
                                         Desarrollo
@@ -41,7 +40,6 @@ export const Navbar = () => {
                                         {catgs}
                                     </ul>
                                 </li>
-                                <li className="nav-item"><Link to="/contact" className="nav-link">Contacto</Link></li>
                             </ul>
                         </div>
                     </div>

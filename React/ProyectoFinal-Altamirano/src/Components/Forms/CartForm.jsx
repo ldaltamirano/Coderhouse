@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import { useCartContext } from "../../Context/CartContext";
 import { collection, getFirestore, addDoc, getCountFromServer } from "firebase/firestore"
-
+import { generatePath, useNavigate } from "react-router-dom";
 
 export default function CartForm() {
     const { cart, cleanCart } = useCartContext();
+    const navigate = useNavigate();
 
     const [inputFields, setInputFields] = useState({
         email: "",
@@ -65,6 +66,10 @@ export default function CartForm() {
         };
 
         addDoc(ordersCollection, order).then(({ id }) => setOrderId(id));
+        cleanCart();
+        localStorage.removeItem("cart")
+        navigate(generatePath("/finishedorder/:id", { id }));
+
     };
 
     useEffect(() => {
@@ -75,7 +80,7 @@ export default function CartForm() {
                 .then(
                     snapshot => sendOrder(inputFields, ordersCollection, snapshot.data().count))
         }
-    }, [errors]);
+    });
 
 
     return (

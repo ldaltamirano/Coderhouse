@@ -37,6 +37,17 @@
     color: #007EAF;
 }
 
+.cleanCart {
+    text-align: center;
+    color: #007EAF;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.cleanCart span {
+    border-bottom: 1px solid #007EAF;
+}
+
 @media (min-width: 992px) {
     .cart-items .price {
         font-size: 16px;
